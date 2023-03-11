@@ -1,12 +1,15 @@
 import React from "react";
 
 import Post from "./Post";
+import Header from "./Header";
 
 function App() {
   return (
     <>
-      <h1>death grips' blog</h1>
-      <h2>posts da semana</h2>  
+
+      <Header title="death grips' blog">
+        <h2>posts da semana</h2>
+      </Header>
 
       <hr />
 
