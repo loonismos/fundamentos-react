@@ -7,13 +7,14 @@ function App() {
   return (
     <>
 
-      <Header title="death grips' blog">
+      <Header>
         <h2>posts da semana</h2>
       </Header>
 
       <hr />
 
       <Post 
+        likes={20}
         post={{
           title: 'gegegege',
           subtitle: 'gagagaga',
@@ -21,6 +22,7 @@ function App() {
       />
 
       <Post 
+        likes={22}
         post={{
           title: 'gegeasd',
           subtitle: 'gagagaga',
@@ -28,6 +30,7 @@ function App() {
       />
 
       <Post 
+        likes={50}
         post={{
           title: 'gegegfa',
           subtitle: 'gagagaga',
