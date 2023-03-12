@@ -6,10 +6,10 @@ import Header from "./Header";
 
 function App() {
   const [posts, setPosts] = useState([
-    {id: Math.random(), title: 'lamp', subtitle: 'fofos', likes: 50},
-    {id: Math.random(), title: 'whitenoise', subtitle: 'based', likes: 60},
-    {id: Math.random(), title: 'link do zap', subtitle: 'maneiro', likes: 55},
-    {id: Math.random(), title: 'roddie', subtitle: 'acorda', likes: 69},
+    {id: Math.random(), title: 'lamp', subtitle: 'fofos', likes: 50, read: false},
+    {id: Math.random(), title: 'whitenoise', subtitle: 'based', likes: 60, read: true},
+    {id: Math.random(), title: 'link do zap', subtitle: 'maneiro', likes: 55, read: false},
+    {id: Math.random(), title: 'roddie', subtitle: 'acorda', likes: 69, read: false},
   ]);
 
   function handleRefresh() {
@@ -43,13 +43,8 @@ function App() {
       {posts.map(post => (
         <Post 
           key={post.id}
-          likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            id: post.id,
-            title: post.title,
-            subtitle: post.subtitle,
-          }}
+          post={post}
         />
       ))}
 
