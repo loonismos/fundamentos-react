@@ -13,8 +13,6 @@ function App() {
   ]);
 
   function handleRefresh() {
-
-    setTimeout(() => {
       setPosts((prevState) => [
         ...prevState,
         {
@@ -24,10 +22,13 @@ function App() {
           likes: 69
         },
       ]);
-    }, 2000)
-    
-    console.log({posts})
-  }
+    }
+
+    function handleRemovePost(postId) {
+      setPosts((prevState) => (
+        prevState.filter(post => post.id !== postId)
+      ));
+    }
 
   return (
     <>
@@ -43,7 +44,9 @@ function App() {
         <Post 
           key={post.id}
           likes={post.likes}
+          onRemove={handleRemovePost}
           post={{
+            id: post.id,
             title: post.title,
             subtitle: post.subtitle,
           }}
