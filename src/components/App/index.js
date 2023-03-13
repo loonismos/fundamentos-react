@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Post from "./Post";
-import Header from "./Header";
-import { ThemeProvider } from "./ThemeContext";
+import Post from "../Post";
+import Header from "../Header";
+import { ThemeProvider } from "../../context/ThemeContext";
 
 import styles from './App.scss';
 
@@ -30,8 +30,8 @@ function App() {
       setPosts((prevState) => prevState.map(
         post => (
           post.id === postId
-            ? { ...post, removed: true }
-            : post
+          ? { ...post, removed: true }
+          : post
         )
       ));
     }
