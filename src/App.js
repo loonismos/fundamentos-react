@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Post from "./Post";
 import Header from "./Header";
+import { ThemeProvider } from "./ThemeContext";
 
 
 function App() {
@@ -31,11 +32,10 @@ function App() {
     }
 
   return (
-    <>
-
+    <ThemeProvider> 
       <Header>
-        <h2>posts da semana</h2>
-        <button onClick={handleRefresh}>atualizar</button>
+        <h2>Posts da semana</h2>
+        <button onClick={handleRefresh}>Atualizar</button>
       </Header>
 
       <hr />
@@ -47,8 +47,7 @@ function App() {
           post={post}
         />
       ))}
-
-    </>
+    </ThemeProvider>
   );
 }
 
